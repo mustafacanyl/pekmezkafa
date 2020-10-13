@@ -1,5 +1,8 @@
+const dashboard = require("../dashboard/app"), config = require("../config")
 module.exports = (client) => {
     console.log(`${client.user.tag}, ready to serve ${client.users.cache.size} users in ${client.guilds.cache.size} servers.`);
+    // Start the dashboard
+    dashboard(client);
     // Bot status 
     const status = require("../config.js").status,
         version = require("../package.json").version;

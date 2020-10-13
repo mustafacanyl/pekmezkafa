@@ -1,4 +1,4 @@
-const config = require("./config.js"), { Client, Collection, MessageEmbed } = require("discord.js");
+const config = require("./config.js"), Dashboard = require("./dashboard/app.js"), { Client, Collection, MessageEmbed } = require("discord.js");
 const client = new Client({ disableMentions: "everyone" }),
       db = require("quick.db"), 
       { GiveawaysManager } = require("discord-giveaways"),
