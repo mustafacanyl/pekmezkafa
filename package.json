@@ -1,6 +1,6 @@
 {
   "name": "managegift",
-  "version": "2.1.1",
+  "version": "2.1.5",
   "description": "ManageGift's | By Hadi Koubeissi using discord-giveaways package",
   "main": "index.js",
   "scripts": {
@@ -50,7 +50,8 @@
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
     "pretty-ms": "^7.0.0",
-    "quick.db": "^7.1.1"
+    "quick.db": "^7.1.1",
+    "quickmongo": "^2.0.4"
   },
   "devDependencies": {
     "nodemon": "2.0.2"
