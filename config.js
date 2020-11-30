@@ -1,6 +1,6 @@
 module.exports = {
 	   /* The token of your Discord Bot // توكن البوت الخاص فيك */
-	   token: "NzY4ODAxODg4Nzc4NzE1MTU2.X5FwjQ.dZsgszgMy3cvLvW4PEflixe6SMo",
+	   token: "NzY4ODAxODg4Nzc4NzE1MTU2.X5FwjQ.3v7IqujPpPgVgd1V4gGe3oWb_cs",
 	   /* for the support server // رابط سيرفر الدعم الخاص فيك */
 	   auth: {
 			support: "", // URL for support server
