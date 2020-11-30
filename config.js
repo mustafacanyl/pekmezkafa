@@ -44,3 +44,4 @@ module.exports = {
 		command: "783059170437627954" //log To see who uses bot commands
 	}
 }
+s
