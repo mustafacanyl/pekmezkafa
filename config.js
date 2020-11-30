@@ -1,33 +1,30 @@
 module.exports = {
 	   /* The token of your Discord Bot // توكن البوت الخاص فيك */
-	   token: "",
+	   token: "NzY4ODAxODg4Nzc4NzE1MTU2.X5FwjQ.dZsgszgMy3cvLvW4PEflixe6SMo",
 	   /* for the support server // رابط سيرفر الدعم الخاص فيك */
 	   auth: {
 			support: "", // URL for support server
-			logs: "", // id of the logs channel on your server if the bot join new server
+			logs: "783059170437627954", // id of the logs channel on your server if the bot join new server
 	},
-    mongoDB: "mongodb://localhost:27017/ManageGift", // The URl of the mongodb database
-	prefix: "%g", // The default prefix for the bot
+    mongoDB: "mongodb+srv://botlist:kalashi123@cluster0.5xoxe.mongodb.net/test?retryWrites=true&w=majority", // The URl of the mongodb database
+	prefix: "p!", // The default prefix for the bot
 	/* For the embeds (embeded messages) */
 	embeds: {
 		    color: "#9AC1FF", // Embed color | لون الامبد
-		    footers: "🎁 ManageGift's | http://managegift.ga" // Embed footer | الكتابة لي تكون اخر الامبد
+		    footers: "🎁 Present Bot's" // Embed footer | الكتابة لي تكون اخر الامبد
 	},
 	/* Bot's owner informations */
 	owner: {
-		   id: "", // The ID of the bot's owner
-		   name: "! -  HaDi KouBeIssI | 🇱🇧#4001" // The ID of the bot's owner
+		   id: "714464777388294237", // The ID of the bot's owner
+		   name: "Kalashi#0001" // The ID of the bot's owner
 	},
 	/* The Bot status */
 	status: [
 	        {
-				name: `%ghelp | ManageGift's on {server} servers!`,
+				name: `p!help | Present Bot's on {server} servers!`,
 				type: "LISTENING"
 			},
-			{
-				name: "https://github.com/Hadi-Koubeissi/ManageGift",
-				type: "PLAYING"
-			}
+			
 		],
         /* Default lang | اللغة الاساسية */
    	    basiclang: "en",
@@ -44,6 +41,6 @@ module.exports = {
 		},
 	//logs for cmd bot
 	logs: {
-		command: "" //log To see who uses bot commands
+		command: "783059170437627954" //log To see who uses bot commands
 	}
 }
