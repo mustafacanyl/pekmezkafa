@@ -95,7 +95,22 @@ function startMessageCollectors(bot, message, args) {
             winnerCount: trueWinners,
             hostedBy: bot.config.hostedBy ? message.author : null,
             messages: {
-              messages: { giveaway: text1, giveawayEnded: text2, timeRemaining: lang.create.timeRemaining, inviteToParticipate: lang.create.inviteToParticipate(message), winMessage: lang.create.winMessage(message), embedFooter: lang.create.embedFooter, noWinner: lang.create.noWinner, hostedBy: lang.create.hostedBy, winners: lang.create.winners, endedAt: lang.create.endedAt, units: { seconds: lang.units.seconds, minutes: lang.units.minutes, hours: lang.units.hours, days: lang.units.days, pluralS: false // Not needed, because units end with a S so it will automatically removed if the unit value is lower than 2
+              giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"<a:Blob:740349851266580531> **GIVEAWAY** <a:Blob:740349851266580531>",
+              giveawayEnded: (bot.config.everyoneMention ? "@everyone\n\n" : "")+"<a:Blob:740349851266580531> **GIVEAWAY ENDED** <a:Blob:740349851266580531>",
+              timeRemaining: "Time remaining: **{duration}**",
+              inviteToParticipate: "React with 🎉",
+              winMessage: "Congratulations, {winners}. You won the **{prize}**!",
+              embedFooter: "Giveaways",
+              noWinner: "Nobody reacted.",
+              hostedBy: "Hosted by: {user}",
+              winners: "winner(s)",
+              endedAt: "Ended at",
+              units: {
+                  seconds: "seconds",
+                  minutes: "minutes",
+                  hours: "hours",
+                  days: "days",
+                  pluralS: false // Not needed, because units end with a S so it will automatically removed if the unit value is lower than 2
                   }
               }
             });
