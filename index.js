@@ -148,7 +148,10 @@ readdir("./commands/", (err, files) => {
         });
     });
 });
-
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+    if (message.content.match(new RegExp(`^<@!?${bot.user.id}>( |)$`))) {
+	     return message.channel.send("Say p!help");
 
 // Login to bot
 client.login(config.token);
