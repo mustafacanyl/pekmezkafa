@@ -5,7 +5,7 @@ exports.run = async (client, message, args, lang) => {
     let supportURL = client.config.auth.support;
     let web = "http://managegift.ga";
     let donate = "https://top.gg/bot/768801888778715156/vote";
-    let invite = "https://discordapp.com/oauth2/authorize?client_id=598564396691750933&scope=bot&permissions=8";
+    let invite = "https://discordapp.com/oauth2/authorize?client_id=768801888778715156&scope=bot&permissions=8";
     message.channel.send(new MessageEmbed()
         .setTitle(lang.help.title)
         .setAuthor(`ManageGift's | Version ${version}`)
