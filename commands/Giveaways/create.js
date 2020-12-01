@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args, lang) => {
       return;
     }
     message.channel.send('<a:Blob:740349851266580531> Please select the channel you want to host the giveaway\nYou can cancel the giveaway at any time by saying \`cancel\`.');
-    await startMessageCollectors(bot, message, args);
+    await startMessageCollectors(bot, message, args, lang);
 }
 
 module.exports.config = {
