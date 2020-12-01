@@ -10,7 +10,7 @@ module.exports = {
 	prefix: "p!", // The default prefix for the bot
 	/* For the embeds (embeded messages) */
 	embeds: {
-		    color: "#9AC1FF", // Embed color | لون الامبد
+		    color: "#0913AE", // Embed color | لون الامبد
 		    footers: "🎁 Present Bot's" // Embed footer | الكتابة لي تكون اخر الامبد
 	},
 	/* Bot's owner informations */
