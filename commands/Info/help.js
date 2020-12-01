@@ -11,7 +11,7 @@ exports.run = async (client, message, args, lang) => {
         .setAuthor(`Present Bot's | Version ${version}`)
         .setThumbnail('https://cdn.discordapp.com/attachments/783056826768949261/783259129288327198/presentbot.png')
         .setDescription(lang.help.disc)
-        .addField(lang.help.giveawaycmd,'`create`, `start`, `end`, `edit`, `reroll`, `delete`')
+        .addField(lang.help.giveawaycmd,'`create`, `start`, `end`, `reroll`, `delete`')
         .addField(lang.help.featuredcmd,'`setlang`, `set logs`, `set mention on`, `set mention off`, `setprefix`, `set role`')
         .addField(lang.help.infocmd,'`stats`, `ping`, `invite`, `help`')
         .addField(lang.help.ownerbot, '`eval`, `blacklist`')
