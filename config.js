@@ -3,7 +3,7 @@ module.exports = {
 	   token: "NzY4ODAxODg4Nzc4NzE1MTU2.X5FwjQ.3v7IqujPpPgVgd1V4gGe3oWb_cs",
 	   /* for the support server // رابط سيرفر الدعم الخاص فيك */
 	   auth: {
-			support: "", // URL for support server
+			support: "https://discord.gg/Z9Vjr9hRWc", // URL for support server
 			logs: "783059170437627954", // id of the logs channel on your server if the bot join new server
 	},
     mongoDB: "mongodb+srv://botlist:kalashi123@cluster0.5xoxe.mongodb.net/test?retryWrites=true&w=majority", // The URl of the mongodb database
