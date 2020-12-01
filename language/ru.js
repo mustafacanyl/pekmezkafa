@@ -108,15 +108,15 @@ module.exports = {
   invite: {
     main: `Главные ссылки`,
     disc: `Введите \`${prefix}invite copy\`, чтобы получить ссылку!`,
-    web: `${e.link} ManageGift's сайт`,
-    inv: `${e.add} Пригласить ManageGift's`,
-    vote: `${e.vote} Голосовать за ManageGift's`,
+    web: `${e.link} Present Bot's сайт`,
+    inv: `${e.add} Пригласить Present Bot's`,
+    vote: `${e.vote} Голосовать за Present Bot's`,
     sup: `${e.supp} Сервер поддержки бота`
   },
 
   help: {
-    title: `ManageGift's информация:`,
-    disc: '● Здесь Вы можете найти все команды `ManageGift`',
+    title: `Present Bot's информация:`,
+    disc: '● Здесь Вы можете найти все команды `Present Bot`',
     giveawaycmd: `${e.givcmd} Команды для розыграша - (6)`,
     featuredcmd: `${e.featured} Команды для настройки бота - (6)`,
     infocmd: `${e.info} Информационные команды - (4)`,
@@ -125,7 +125,7 @@ module.exports = {
   },
 
   stats: {
-    title: `ManageGift's информация:`,
+    title: `Present Bot's информация:`,
     info: `Это open-source проект для создания розыграшей с возможностью полной настройки. Бот написан на языке \`javascript\` и его сделал: ${config.owner.name}! Перевод: LWJerri#3290`,
     stats: `${e.stats} • __Статистика:__`,
     stat: `\`Серверов:\``,
@@ -152,6 +152,6 @@ module.exports = {
   },
   
   blacklist: {
-    blacklist: `:lock: **Вы не можете использовать \`ManageGift команды\`, т.к Вы в \`чёрном списке!!\`**`
+    blacklist: `:lock: **Вы не можете использовать \`Present Bot команды\`, т.к Вы в \`чёрном списке!!\`**`
   }
 }
