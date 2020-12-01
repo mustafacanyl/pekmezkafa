@@ -1,39 +1,46 @@
-const ms = require("ms");
+const Discord = require('discord.js');
+const ms = require('ms');
 
-exports.run = async (client, message, args, lang) => {
-    let role = client.db.fetch(`role_${message.guild.id}`);
-    if (!role) role = client.config.giveaway.grole;
+module.exports.run = async (bot, message, args) => {
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+      message.channel.send('You don\'t have permission to use this command.');
+      return;
+    }
 
-    // If the member doesn't have enough permissions
-    if (!message.member.hasPermission("MANAGE_MESSAGES") && !message.member.roles.cache.some((r) => r.name === role)) return message.channel.send(lang.start.perms + "** **" + "`" + role + "`" + ".");
-    
-    // If no message ID or giveaway name is specified
-    if (!args[0]) return message.channel.send(lang.end.msg);
+    if(!args[0]){
+        message.channel.send('Please specify a valid message ID!');
+        return;
+    }
 
-    if(message.member.guild.id != client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]).guildID) return message.channel.send(lang.delete.otherServer);
-    if("<@" + message.member.id + ">" != client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]).hostedBy) return message.channel.send(lang.delete.otherUser);
+    let giveaway =
+    bot.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) ||
+    bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
-    // try to found the giveaway with prize then with ID
-    let giveaway = client.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) || client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
+    if(!giveaway){
+        message.channel.send('Couldn\'t find that giveaway.');
+        return;
+    }
 
-    // If no giveaway was found
-    if (!giveaway) return message.channel.send(lang.end.err + "** **" + "`" + args.join(' ') + "`" + ".");
-    
-
-    // Edit the giveaway
-    client.giveawaysManager.edit(giveaway.messageID, {
+    bot.giveawaysManager.edit(giveaway.messageID, {
         setEndTimestamp: Date.now()
     })
-        // Success message
-        .then(() => {
-            // Success message
-            message.channel.send(lang.end.good + "** **" + "`" + (client.giveawaysManager.options.updateCountdownEvery / 1000) + "`" + "** **" + lang.units.seconds + ".");
-        }).catch((e) => {
-            if (e.startsWith(`Giveaway with message ID ${giveaway.messageID} is not ended.`)) {
-                message.channel.send(lang.end.err + "** **" + "`" + giveaway.messageID + "`" + ".");
-            } else {
-                console.error(e);
-                message.channel.send(lang.end.errmod);
-            }
-        });
-};
+    .then(() => {
+        message.channel.send(`The have ended the giveaway.\nPrize: **${giveaway.data.prize}**`);
+    })
+    .catch((e) => {
+        if(e.startsWith(`The giveaway with the message ID ${giveaway.messageID} has already ended.`)){
+            message.channel.send('This giveaway has already ended!');
+        } else {
+            console.error(e);
+            message.channel.send('An error occured...');
+        }
+    });
+}
+
+module.exports.config = {
+    name: "end",
+    description: "Ends a giveaway.",
+    usage: "p!end <message id | prize>",
+    accessableby: "manageServer, manageMessages",
+    aliases: []
+}
