@@ -8,8 +8,8 @@ exports.run = async (client, message, args, lang) => {
     let invite = "https://discordapp.com/oauth2/authorize?client_id=768801888778715156&scope=bot&permissions=8";
     message.channel.send(new MessageEmbed()
         .setTitle(lang.help.title)
-        .setAuthor(`ManageGift's | Version ${version}`)
-        .setThumbnail('https://i.top4top.io/p_1603lgj9t1.gif')
+        .setAuthor(`Present Bot's | Version ${version}`)
+        .setThumbnail('https://cdn.discordapp.com/attachments/783056826768949261/783259129288327198/presentbot.png')
         .setDescription(lang.help.disc)
         .addField(lang.help.giveawaycmd,'`create`, `start`, `end`, `edit`, `reroll`, `delete`')
         .addField(lang.help.featuredcmd,'`setlang`, `set logs`, `set mention on`, `set mention off`, `setprefix`, `set role`')
