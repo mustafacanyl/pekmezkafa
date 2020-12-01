@@ -149,6 +149,6 @@ readdir("./commands/", (err, files) => {
     });
 });
 
-    }
+    
 // Login to bot
 client.login(config.token);
