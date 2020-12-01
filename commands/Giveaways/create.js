@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send('You don\'t have permission to use this command.');
       return;
     }
-    message.channel.send('<a:Blob:740349851266580531> Please select the channel you want to host the giveaway\nYou can cancel the giveaway at any time by saying \`cancel\`.');
+    message.channel.send('<:giftpre:783265348530995201> Please select the channel you want to host the giveaway\nYou can cancel the giveaway at any time by saying \`cancel\`.');
     await startMessageCollectors(bot, message, args);
 }
 
@@ -26,7 +26,7 @@ function startMessageCollectors(bot, message, args) {
     channelCollector.on('collect', async msg => {
       let channel = await msg.mentions.channels.first();
       if (msg.content.toLowerCase() === 'cancel') {
-        msg.channel.send('The giveaway has been <:Verified:740350406051496067> successfully canceled.')
+        msg.channel.send('The giveaway has been <:verifiedpre:783356559463284757> successfully canceled.')
         channelCollector.stop();
         return;
       }
@@ -35,7 +35,7 @@ function startMessageCollectors(bot, message, args) {
         await channelCollector.stop();
         return;
       } else {
-        msg.channel.send(`<:Blob:740349910905258074> The giveaway will be hosted in ${channel.toString()}. How long do you want the giveaway to last?\nExample: 20m, 1h`)
+        msg.channel.send(`<:giftpre:783265348530995201> The giveaway will be hosted in ${channel.toString()}. How long do you want the giveaway to last?\nExample: 20m, 1h`)
         channelCollector.stop();
       }
       let durationFilter = m => m.author.id === message.author.id;
@@ -52,7 +52,7 @@ function startMessageCollectors(bot, message, args) {
           durationCollector.stop();
           return;
         } else {
-          msg.channel.send(`<a:Blob:740349851266580531> The giveaway will last **${prettyMilliseconds(ms(duration), {verbose: true})}**. How many winners do you want to have?\nThe max amount of winners you can have is 20.`);
+          msg.channel.send(`<:giftpre:783265348530995201> The giveaway will last **${prettyMilliseconds(ms(duration), {verbose: true})}**. How many winners do you want to have?\nThe max amount of winners you can have is 20.`);
           durationCollector.stop();
         }
         let winnersFilter = m => m.author.id === message.author.id;
@@ -70,7 +70,7 @@ function startMessageCollectors(bot, message, args) {
           winnersCollector.stop();
           return;
         } else {
-          msg.channel.send(`<a:Blob:740349851266580531> There will be ${trueWinners} winner(s). Now, what do you want the prize to be?`)
+          msg.channel.send(`<:giftpre:783265348530995201> There will be ${trueWinners} winner(s). Now, what do you want the prize to be?`)
           winnersCollector.stop();
         }
         let prizeFilter = m => m.author.id === message.author.id;
@@ -87,7 +87,7 @@ function startMessageCollectors(bot, message, args) {
           prizeCollector.stop();
           return;
         } else {
-          msg.channel.send(`<a:Blob:740349851266580531> The giveaway has been created in ${channel.toString()}.`);
+          msg.channel.send(`<:giftpre:783265348530995201> The giveaway has been created in ${channel.toString()}.`);
           prizeCollector.stop();
           bot.giveawaysManager.start(channel, {
             time: ms(duration),
@@ -95,8 +95,8 @@ function startMessageCollectors(bot, message, args) {
             winnerCount: trueWinners,
             hostedBy: bot.config.hostedBy ? message.author : null,
             messages: {
-              giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"<a:Blob:740349851266580531> **GIVEAWAY** <a:Blob:740349851266580531>",
-              giveawayEnded: (bot.config.everyoneMention ? "@everyone\n\n" : "")+"<a:Blob:740349851266580531> **GIVEAWAY ENDED** <a:Blob:740349851266580531>",
+              giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"<:giveaway:783357551345270805> **GIVEAWAY** <:giveaway:783357551345270805>",
+              giveawayEnded: (bot.config.everyoneMention ? "@everyone\n\n" : "")+"<:giveaway:783357551345270805> **GIVEAWAY ENDED** <:giveaway:783357551345270805>",
               timeRemaining: "Time remaining: **{duration}**",
               inviteToParticipate: "React with 🎉",
               winMessage: "Congratulations, {winners}. You won the **{prize}**!",
