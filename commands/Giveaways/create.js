@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ms = require('ms');
 const prettyMilliseconds = require('pretty-ms');
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, lang) => {
       let role = client.db.fetch(`role_${message.guild.id}`);
     if (!role) role = client.config.giveaway.grole;
     
