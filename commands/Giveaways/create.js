@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
       let role = client.db.fetch(`role_${message.guild.id}`);
     if (!role) role = client.config.giveaway.grole;
     
-    if (!message.member.hasPermission('MANAGE_MESSAGES')) {
-      message.channel.send('You don\'t have permission to use this command.');
+    if (!message.member.hasPermission("MANAGE_MESSAGES") && !message.member.roles.cache.some((r) => r.name === role))
+     message.channel.send(lang.create.perms + "** **" + "`" + role + "`" + "!.");
       return;
     }
     message.channel.send('<a:Blob:740349851266580531> Please select the channel you want to host the giveaway\nYou can cancel the giveaway at any time by saying \`cancel\`.');
