@@ -1,32 +1,46 @@
-exports.run = async (client, message, args, lang) => {
-    let role = client.db.fetch(`role_${message.guild.id}`);
-    if (!role) role = client.config.giveaway.grole;
+const Discord = require('discord.js');
+const ms = require('ms');
 
-    // If the member doesn't have enough permissions
-    if (!message.member.hasPermission("MANAGE_MESSAGES") && !message.member.roles.cache.some((r) => r.name === role))return message.channel.send(lang.start.perms + "** **" + "`" + role + "`" + ".");
+module.exports.run = async (bot, message, args) => {
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+      message.channel.send('You don\'t have permission to use this command.');
+      return;
+    }
 
-    
-    // If no message ID or giveaway name is specified
-    if (!args[0]) return message.channel.send(lang.reroll.msg);
+    if (!args.slice(0).join(" ")) {
+      message.channel.send('Please specify a valid message ID!');
+      return;
+    }
 
-    if(message.member.guild.id != client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]).guildID) return message.channel.send(lang.delete.otherServer);
-    if("<@" + message.member.id + ">" != client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]).hostedBy) return message.channel.send(lang.delete.otherUser);
+    let giveaway =
+    bot.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) ||
+    bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
-    // try to found the giveaway with prize then with ID
-    let giveaway = client.giveawaysManager.giveaways.find((g) => g.prize === args.join(' ')) || client.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
+    if (!giveaway) {
+      message.channel.send('I couldn\'t find that giveaway.');
+      return;
+    }
 
-    // If no giveaway was found
-    if (!giveaway) return message.channel.send(lang.reroll.err + "** **" + "`" + args.join(' ') + "`" + ".");
-    
-
-    let messageID = args[0];
-
-    client.giveawaysManager.reroll(messageID, {
-        messages: {
-            congrat: lang.reroll.good,
-            error: lang.reroll.parts
+    bot.giveawaysManager.reroll(giveaway.messageID)
+    .then(() => {
+        // Success message
+        message.channel.send('Giveaway rerolled!');
+    })
+    .catch((e) => {
+        if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is not ended.`)){
+            message.channel.send('This giveaway is not ended!');
+        } else {
+            console.error(e);
+            message.channel.send('An error occured...');
         }
-    }).catch((err) => {
-        message.channel.send(lang.reroll.err + "** **" + "`" + messageID + "`" + ".");
     });
-};
+
+}
+
+module.exports.config = {
+    name: "reroll",
+    description: "Rerolls a giveaway.",
+    usage: "p!reroll <message id | prize>",
+    accessableby: "manageServer, manageMessages",
+    aliases: []
+}
