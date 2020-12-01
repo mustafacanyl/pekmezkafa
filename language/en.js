@@ -108,15 +108,15 @@ module.exports = {
   invite: {
     main: `Main links`,
     disc: `Type \`${prefix}invite copy\` to be able to copy the link!`,
-    web: `${e.link} ManageGift's Website`,
-    inv: `${e.add} Invite ManageGift's Bot`,
-    vote: `${e.vote} Vote For ManageGift's Bot`,
+    web: `${e.link} Present Bot's Website`,
+    inv: `${e.add} Invite Present Bot's Bot`,
+    vote: `${e.vote} Vote For Present Bot's Bot`,
     sup: `${e.supp} Join The Support Server`
   },
 
   help: {
     title: `Help Documents Overview:`,
-    disc: '● Here you can find all `ManageGift Commands`',
+    disc: '● Here you can find all `Present Bot Commands`',
     giveawaycmd: `${e.givcmd} Giveaway commands - (6)`,
     featuredcmd: `${e.featured} Featured commands - (6)`,
     infocmd: `${e.info} Info commands - (4)`,
@@ -125,7 +125,7 @@ module.exports = {
   },
 
   stats: {
-    title: `ManageGift's Information:`,
+    title: `Present Bot's Information:`,
     info: `It is an open source bot that allows you to create giveaway with ease and gives you many distinct features. The bot is Programmed in \`javascript language\` and By: ${config.owner.name}`,
     stats: `${e.stats} • __Statistics:__`,
     stat: `\`Servers:\``,
@@ -150,6 +150,6 @@ module.exports = {
     err: `${e.error} | **You must wait \`4 second(s)\` ${e.time} to be able to run this command again!**`
   },
   blacklist: {
-    blacklist: `:lock: **You cannot use \`ManageGift commands\` because you are in the \`Blacklist!!\`**`
+    blacklist: `:lock: **You cannot use \`Present Bot commands\` because you are in the \`Blacklist!!\`**`
   }
 }
