@@ -152,6 +152,20 @@ bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
     if (message.content.match(new RegExp(`^<@!?${bot.user.id}>( |)$`))) {
 	     return message.channel.send("Say p!help");
+	    
+let prefix = config.prefix;
 
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+
+    if(!message.content.startsWith(prefix)) return;
+    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+    if(commandfile) {
+      commandfile.run(bot,message,args);
+      message.react('721476177574756404');
+    }
+});
+    }
 // Login to bot
 client.login(config.token);
