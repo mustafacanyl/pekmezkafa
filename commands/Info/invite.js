@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 exports.run = async (client, message, args, lang) => {
     let websiteURL = `http://managegift.ga`;
     let inviteLink = `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`;
-    let voteURL = `https://discordbots.org/bot/${client.user.id}/vote`;
+    let voteURL = `https://top.gg/bot/${client.user.id}/vote`;
     let supportURL = client.config.auth.support
     if (args[0] == "copy")return message.channel.send(inviteLink);
 
