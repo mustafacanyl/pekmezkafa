@@ -100,15 +100,15 @@ module.exports = {
   invite: {
     main: `الروابط الاساسية`,
     disc: `للحصول على رابط قابل للنسخ اكتب الامر التالي \n \`${prefix}invite copy\``,
-    web: `${e.link} رابط موقع ManageGift's BoT`,
-    inv: `${e.add} رابط اضافة ManageGift's BoT`,
-    vote: `${e.vote} التصويت ل ManageGift's BoT`,
+    web: `${e.link} رابط موقع Present Bot's BoT`,
+    inv: `${e.add} رابط اضافة Present Bot's BoT`,
+    vote: `${e.vote} التصويت ل Present Bot's BoT`,
     sup: `${e.supp} سيرفر الدعم الفني`
   },
 
   help: {
     title: `Help Documents Overview:`,
-    disc: '● هنا يمكنك ان تجد جميع `ManageGift Commands`',
+    disc: '● هنا يمكنك ان تجد جميع `Present Bot Commands`',
     giveawaycmd: `${e.givcmd} أوامر القيف آوي - (٦)`,
     featuredcmd: `${e.featured} أوامر المميزه - (٦)`,
     infocmd: `${e.info} أوامر المعلومات - (٤)`,
@@ -117,7 +117,7 @@ module.exports = {
   },
 
   stats: {
-    title: `ManageGift's Information:`,
+    title: `Present Bot's Information:`,
     info: `انه بوت مفتوح المصدر، يسمح لك بانشاء القيف اوي بسهولة تامة ويوفر لك العديد من المميزات. \n :تم برمجة البوت بلغة \`javascript language\` :وايضا بواسطة ${config.owner.name}`,
     stats: `__${e.stats} :الاحصائيات__`,
     stat: `\`:إجمالي السيرفرات\``,
