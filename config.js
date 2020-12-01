@@ -6,7 +6,7 @@ module.exports = {
 			support: "https://discord.gg/Z9Vjr9hRWc", // URL for support server
 			logs: "783059170437627954", // id of the logs channel on your server if the bot join new server
 	},
-    mongoDB: "mongodb+srv://botlist:kalashi123@cluster0.5xoxe.mongodb.net/test?retryWrites=true&w=majority", // The URl of the mongodb database
+    mongoDB: "mongodb+srv://kalashibot:kalashi123@cluster0.dg6dp.mongodb.net/database?retryWrites=true&w=majority", // The URl of the mongodb database
 	prefix: "p!", // The default prefix for the bot
 	/* For the embeds (embeded messages) */
 	embeds: {
