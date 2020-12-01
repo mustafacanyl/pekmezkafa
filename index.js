@@ -112,14 +112,14 @@ client
     .on("guildCreate", async guild => {
         await client.channels.cache.get(client.config.auth.logs).send(new MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
-            .setDescription(`ManageGift is joind in: **${guild.name}** server iD: **${guild.id}** owner server iD: **${guild.ownerID}** with ${guild.members.cache.size} members & (${guild.members.cache.filter((m) => m.user.bot).size} bots)`)
+            .setDescription(`Present Bot is joind in: **${guild.name}** server iD: **${guild.id}** owner server iD: **${guild.ownerID}** with ${guild.members.cache.size} members & (${guild.members.cache.filter((m) => m.user.bot).size} bots)`)
             .setColor("#7CFC00")
             .setFooter(client.config.embeds.footers)).catch(() => { });
     })
     .on("guildDelete", async guild => {
         await client.channels.cache.get(client.config.auth.logs).send(new MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
-            .setDescription(`ManageGift is leave **${guild.name}** | **${guild.id}** server and the id of owner server is **${guild.ownerID}**`)
+            .setDescription(`Present Bot is leave **${guild.name}** | **${guild.id}** server and the id of owner server is **${guild.ownerID}**`)
             .setColor("#DC143C")
             .setFooter(client.config.embeds.footers)).catch(() => { });
     });
