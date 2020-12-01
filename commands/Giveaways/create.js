@@ -3,6 +3,9 @@ const ms = require('ms');
 const prettyMilliseconds = require('pretty-ms');
 
 module.exports.run = async (bot, message, args) => {
+      let role = client.db.fetch(`role_${message.guild.id}`);
+    if (!role) role = client.config.giveaway.grole;
+    
     if (!message.member.hasPermission('MANAGE_MESSAGES')) {
       message.channel.send('You don\'t have permission to use this command.');
       return;
